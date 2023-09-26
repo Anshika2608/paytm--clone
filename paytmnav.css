@@ -1,0 +1,96 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+nav{
+    background-color: white;
+    width:100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width:180px;
+    height:55.24px;
+}
+.content .links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .links li{
+    list-style-type: none;
+}
+.content .links li a,
+.content .links li label{
+    color:black;
+    padding-right:60px;
+    font-size: larger;
+    font-weight: bold;
+
+}
+.content .links li label{
+    display:none;
+}
+.go-icon{
+    background-color:#00BAF2;
+    color:white;
+    border-radius: 20px;
+    height:38px;
+    width:114px;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-right: 4px;
+}
+.go-icon:hover{
+    background-color: rgb(17, 17, 74) ;
+}
+nav .showicon{
+    cursor:pointer;
+    text-align: center;
+    font-size: 18px;
+}
+nav .showicon{
+    display: none;
+}
+nav input[type="checkbox"]
+{
+    display:none;
+}
+@media(max-width:900px)
+{
+    .content .links li label{
+        display:block;
+    }
+    nav .showicon{
+        display:block;
+    }
+    nav #showmenu:checked~ .showicon i::before{
+        content: "\f00d";
+    }
+    nav .content .links{
+        display:block;
+        position:fixed;
+        background: white;
+        left:-100%;
+        top:70px; 
+        height:100%;
+        width:100%;
+        max-width:350px;
+        overflow: auto;
+        max-width: 350px; 
+        padding-bottom: 100px;
+        transition: all 0.3s ease;
+    }
+     nav #showmenu:checked~ .content .links{
+        left:0%;
+    } 
+    .content .links li{
+        margin:15px 20px;
+    } 
+
+}
